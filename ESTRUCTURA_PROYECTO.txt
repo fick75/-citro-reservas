@@ -1,0 +1,140 @@
+📁 ESTRUCTURA DEL PROYECTO CITRO RESERVAS
+
+citro-reservas/
+│
+├── 📄 package.json                    (Dependencias del proyecto)
+├── 📄 .env.example                    (Variables de entorno - EDITAR)
+├── 📄 .env.local                      (LOCAL SOLO - NO SUBIR A GIT)
+├── 📄 .gitignore                      (Archivos ignorados por Git)
+│
+├── 📁 src/
+│   ├── 📄 main.jsx                    (Punto de entrada)
+│   ├── 📄 App.jsx                     (Componente principal)
+│   ├── 📄 index.css                   (Estilos globales)
+│   │
+│   └── 📁 lib/
+│       └── 📄 supabase.js             (Cliente Supabase + funciones)
+│
+├── 📁 public/
+│   └── 📄 index.html                  (HTML principal)
+│
+├── ⚙️ vite.config.js                  (Configuración Vite)
+├── ⚙️ tailwind.config.js              (Configuración Tailwind)
+├── ⚙️ postcss.config.js               (Configuración PostCSS)
+├── ⚙️ vercel.json                     (Configuración Vercel)
+│
+└── 📚 DOCUMENTACIÓN/
+    ├── 📄 README.md                   (Este proyecto)
+    ├── 📄 GUIA_DEPLOYMENT_NUBE.md    (Guía despliegue paso a paso)
+    ├── 📄 01_schema.sql               (SQL schema para Supabase)
+    └── 📄 ESTRUCTURA_PROYECTO.txt     (Este archivo)
+
+
+🗄️ BASE DE DATOS (SUPABASE)
+====================================
+
+Tablas Principales:
+├── salas (id, nombre, capacidad, ubicacion, color)
+├── usuarios (id, email, nombre, rol, departamento)
+├── reservas (id, sala_id, usuario_id, fecha, hora_inicio, estado)
+├── notificaciones (id, usuario_id, tipo, titulo, mensaje)
+└── auditoria (auto-generated para auditoría)
+
+Vistas Útiles:
+├── v_disponibilidad_salas (disponibilidad por fecha)
+└── v_estadisticas_reservas (estadísticas por sala)
+
+Triggers & Funciones:
+├── Validación automática de conflictos
+├── Auditoría automática
+└── Timestamps actualizados
+
+
+🚀 FLUJO DE DESPLIEGUE
+====================================
+
+LOCAL (Desarrollo)
+    ↓ git push
+GITHUB (Repositorio)
+    ↓ conectar
+VERCEL (Frontend)
+    ↓ conectar
+SUPABASE (Backend + DB)
+
+Resultado Final:
+    https://citro-reservas.vercel.app
+    ↓
+    Conecta automáticamente a Supabase Cloud
+    ↓
+    PostgreSQL Database respaldada
+
+
+⚙️ VARIABLES DE ENTORNO
+====================================
+
+Necesarias para conectar a Supabase:
+
+VITE_SUPABASE_URL
+└─ Ejemplo: https://xyzabc.supabase.co
+
+VITE_SUPABASE_ANON_KEY
+└─ Ejemplo: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+⚠️ NUNCA compartir estas claves
+⚠️ Guardar en .env.local (no en git)
+✅ Pasar a Vercel como "Environment Variables"
+
+
+🔄 CICLO DE DESARROLLO
+====================================
+
+1. Cambios locales
+   npm run dev
+   → http://localhost:5173
+
+2. Probar todo funciona
+
+3. Commit a GitHub
+   git add .
+   git commit -m "feat: descripción"
+   git push origin main
+
+4. Vercel detecta cambio
+
+5. Vercel redeploya automáticamente
+   → https://citro-reservas.vercel.app
+
+6. Base de datos Supabase ya actualizada
+
+
+📞 SERVICIOS EN LA NUBE
+====================================
+
+Supabase (Backend + Database)
+├── Plan Gratuito: ~50GB datos
+├── Backups automáticos
+├── API REST automática
+└── Escalable a pago
+
+Vercel (Frontend + Hosting)
+├── Plan Gratuito: sin límites
+├── Dominio incluido: citro-reservas.vercel.app
+├── Deploy automático
+└── Analytics incluido
+
+
+✅ CHECKLIST ANTES DE PRODUCCIÓN
+====================================
+
+[ ] Schema SQL ejecutado en Supabase
+[ ] Todas las tablas creadas
+[ ] Credenciales Supabase obtenidas
+[ ] Código en GitHub
+[ ] Variables en Vercel configuradas
+[ ] Deploy exitoso en Vercel
+[ ] Login funciona
+[ ] Crear reserva funciona (Usuario)
+[ ] Aprobar reserva funciona (Admin)
+[ ] Base de datos recibe datos
+[ ] Puedes acceder desde https://citro-reservas.vercel.app
+

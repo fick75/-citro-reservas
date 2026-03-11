@@ -1,0 +1,151 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║      🚀 CITRO RESERVAS - GUÍA RÁPIDA CLOUD (5 MINUTOS)       ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+
+PASO 1: CREAR PROYECTO SUPABASE (2 min)
+═══════════════════════════════════════
+
+1. Abre: https://supabase.com
+2. Sign Up con GitHub (click derecho "New")
+3. Selecciona "New Project"
+4. Nombre: citro-reservas
+5. Contraseña: (guárdala)
+6. Región: Selecciona la más cercana
+7. Click "Create new project"
+8. Espera a que cargue...
+
+
+PASO 2: CREAR TABLAS EN SUPABASE (1 min)
+═════════════════════════════════════════
+
+1. En el dashboard → SQL Editor (lado izquierdo)
+2. Click "New Query"
+3. COPIA TODO el contenido de: 01_schema.sql
+4. PÉGALO en el editor
+5. Click botón azul "▶ Run"
+6. Espera "Success" ✓
+
+
+PASO 3: OBTENER CREDENCIALES (1 min)
+════════════════════════════════════
+
+1. En Supabase → Settings (arriba a la derecha) → API
+2. Busca "Project URL"
+   Ejemplo: https://xyzabc.supabase.co
+   
+3. Busca "anon public"
+   Ejemplo: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+4. COPIA AMBAS en un bloc de notas (las necesitas!)
+
+
+PASO 4: SUBIR A GITHUB (1 min)
+══════════════════════════════
+
+1. Ve a: https://github.com/new
+2. Nombre repo: citro-reservas
+3. Privado (recomendado)
+4. Click "Create repository"
+
+5. En tu computadora:
+   git clone https://github.com/TU_USUARIO/citro-reservas
+   cd citro-reservas
+
+6. Copia TODOS estos archivos aquí:
+   - package.json
+   - App.jsx
+   - supabase.js
+   - .env.example
+   - vite.config.js
+   - tailwind.config.js
+   - postcss.config.js
+
+7. Luego:
+   git add .
+   git commit -m "feat: Initial setup"
+   git push origin main
+
+
+PASO 5: DESPLEGAR EN VERCEL (1 min)
+═══════════════════════════════════
+
+1. Ve a: https://vercel.com
+2. Sign Up con GitHub
+3. Click "Import Project"
+4. Selecciona "citro-reservas"
+5. Click "Import"
+
+6. En "Environment Variables" agrega:
+   
+   Name: VITE_SUPABASE_URL
+   Value: https://xyzabc.supabase.co  (del paso 3)
+   
+   Name: VITE_SUPABASE_ANON_KEY
+   Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...  (del paso 3)
+   
+   Click "Add" para cada una
+
+7. Click "Deploy"
+8. Espera 2-3 minutos
+9. ¡Listo! Te dará una URL como:
+   https://citro-reservas.vercel.app
+
+
+PASO 6: PROBAR LA APP (Bonus)
+═════════════════════════════
+
+1. Abre la URL de Vercel en el navegador
+2. Login como usuario:
+   Email: juan@citro.edu.mx
+   Nombre: Juan Pérez
+   Rol: Usuario
+   
+3. Nueva Solicitud → Crear reserva
+
+4. Vuelve a login como admin:
+   Email: admin@citro.edu.mx
+   Nombre: Rosa García
+   Rol: Administrador
+   
+5. Panel Admin → Ver solicitud → Aprobar
+
+¡FUNCIONA! Tu app está en la nube 🎉
+
+
+═════════════════════════════════════════════════════════════════
+
+IMPORTANTÍSIMO:
+
+❌ NO HAGAS:
+   - No compartas las claves Supabase públicamente
+   - No subas .env.local a GitHub
+   - No uses localhost en producción
+
+✅ SÍ HACES:
+   - Guarda un backup de las claves
+   - Usa las variables en Vercel
+   - Accede solo por https://citro-reservas.vercel.app
+   - Respaldos automáticos en Supabase
+
+
+SI ALGO FALLA:
+
+Error "Module not found": npm install
+Error "Variables undefined": Verifica .env.local
+Error "Connection refused": Copia bien la URL de Supabase
+Error "Base datos vacía": Ejecuta el schema SQL completo
+
+
+¿PREGUNTAS?
+
+Supabase Docs: https://supabase.com/docs
+Vercel Docs: https://vercel.com/docs
+Este archivo: GUIA_DEPLOYMENT_NUBE.md
+
+
+═════════════════════════════════════════════════════════════════
+Documentación completa en: GUIA_DEPLOYMENT_NUBE.md
+═════════════════════════════════════════════════════════════════
