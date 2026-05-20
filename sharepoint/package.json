@@ -1,0 +1,44 @@
+{
+  "name": "citro-reservas-spfx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CITRO Reservas - Web Part para SharePoint Framework",
+  "engines": {
+    "node": ">=18.17.1 <19.0.0"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "jest --passWithNoTests",
+    "package": "gulp bundle --ship && gulp package-solution --ship",
+    "serve": "gulp serve",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@microsoft/sp-core-library": "1.19.0",
+    "@microsoft/sp-lodash-subset": "1.19.0",
+    "@microsoft/sp-office-ui-fabric-core": "1.19.0",
+    "@microsoft/sp-webpart-base": "1.19.0",
+    "@microsoft/sp-http": "1.19.0",
+    "@microsoft/sp-page-context": "1.19.0",
+    "@microsoft/sp-property-pane": "1.19.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-config-spfx": "1.19.0",
+    "@microsoft/eslint-plugin-spfx": "1.19.0",
+    "@microsoft/sp-build-web": "1.19.0",
+    "@microsoft/sp-module-interfaces": "1.19.0",
+    "@rushstack/eslint-config": "2.5.1",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "@types/webpack-env": "1.13.1",
+    "eslint": "8.7.0",
+    "gulp": "4.0.2",
+    "typescript": "4.5.5"
+  }
+}
