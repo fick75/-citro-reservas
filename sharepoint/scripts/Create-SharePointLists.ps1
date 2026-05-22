@@ -8,10 +8,10 @@
     Requiere el módulo PnP.PowerShell (v2.x).
 
 .PARAMETER SiteUrl
-    URL del sitio SharePoint. Ej: https://contoso.sharepoint.com/sites/citro-reservas
+    URL del sitio SharePoint. Ej: https://uvmx.sharepoint.com/sites/AgendadeEspacios
 
 .EXAMPLE
-    .\Create-SharePointLists.ps1 -SiteUrl "https://contoso.sharepoint.com/sites/citro-reservas"
+    .\Create-SharePointLists.ps1 -SiteUrl "https://uvmx.sharepoint.com/sites/AgendadeEspacios"
 #>
 
 param(

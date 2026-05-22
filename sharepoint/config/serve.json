@@ -2,5 +2,5 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
   "port": 4321,
   "https": true,
-  "initialPage": "https://[tenant].sharepoint.com/sites/citro-reservas/_layouts/workbench.aspx"
+  "initialPage": "https://uvmx.sharepoint.com/sites/AgendadeEspacios/_layouts/workbench.aspx"
 }

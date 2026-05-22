@@ -43,7 +43,7 @@ Esta propuesta describe la migración e integración del sistema CITRO Reservas 
 
 ### 2.1 Sitio SharePoint de Comunicación
 - **Tipo:** Communication Site (sitio moderno)
-- **URL sugerida:** `https://[tenant].sharepoint.com/sites/citro-reservas`
+- **URL:** `https://uvmx.sharepoint.com/sites/AgendadeEspacios`
 - **Navegación:** Menú lateral con secciones por rol (Usuario / Administrador)
 - **Tema:** Color institucional + branding CITRO
 
