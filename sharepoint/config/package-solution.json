@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "citro-reservas",
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "version": "1.0.0.0",
+    "title": "CITRO Reservas",
+    "developer": {
+      "name": "CITRO",
+      "websiteUrl": ""
+    },
+    "metadata": {
+      "shortDescription": { "default": "Sistema de reservas de salas académicas" },
+      "longDescription": {
+        "default": "Gestión completa de reservas de salas y espacios académicos integrada en SharePoint Online."
+      },
+      "categories": ["Productivity"]
+    },
+    "webApiPermissionRequests": [
+      { "resource": "Microsoft Graph", "scope": "User.Read" },
+      { "resource": "Microsoft Graph", "scope": "Calendars.ReadWrite" }
+    ],
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": false,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/citro-reservas.sppkg"
+  }
+}
